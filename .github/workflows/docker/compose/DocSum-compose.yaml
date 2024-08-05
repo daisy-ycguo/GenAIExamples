@@ -1,0 +1,17 @@
+# Copyright (C) 2024 Intel Corporation
+# SPDX-License-Identifier: Apache-2.0
+
+# this file should be run in the root of the repo
+services:
+  docsum:
+    build:
+      dockerfile: DocSum/docker/Dockerfile
+    image: ${REGISTRY}opea/docsum:${TAG:-latest}
+  docsum-ui:
+    build:
+      dockerfile: DocSum/docker/ui/docker/Dockerfile
+    image: ${REGISTRY}opea/docsum-ui:${TAG:-latest}
+  docsum-react-ui:
+    build:
+      dockerfile: DocSum/docker/ui/docker/Dockerfile.react
+    image: ${REGISTRY}opea/docsum-react-ui:${TAG:-latest}

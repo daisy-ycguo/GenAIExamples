@@ -1,0 +1,17 @@
+# Copyright (C) 2024 Intel Corporation
+# SPDX-License-Identifier: Apache-2.0
+
+# this file should be run in the root of the repo
+services:
+  faqgen:
+    build:
+      dockerfile: FaqGen/docker/Dockerfile
+    image: ${REGISTRY}opea/faqgen:${TAG:-latest}
+  faqgen-ui:
+    build:
+      dockerfile: FaqGen/docker/ui/docker/Dockerfile
+    image: ${REGISTRY}opea/faqgen-ui:${TAG:-latest}
+  faqgen-react-ui:
+    build:
+      dockerfile: FaqGen/docker/ui/docker/Dockerfile.react
+    image: ${REGISTRY}opea/faqgen-react-ui:${TAG:-latest}
